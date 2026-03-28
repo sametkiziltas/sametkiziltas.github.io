@@ -1,11 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Samet Kızıltaş – Senior Software Developer</title>
+  <meta name="description" content="Personal website and CV of Samet Kızıltaş, Senior Software Developer specialising in C#, .NET and Microservices." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-   <h1>hello world</h1> 
+
+  <!-- ── Navigation ─────────────────────────────────────── -->
+  <header class="site-header">
+    <nav class="nav container">
+      <a href="#hero" class="nav-logo">SK</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-ghost" onclick="openCVViewer()">View CV</button>
+        <a class="btn btn-primary" href="SAMET-KIZILTAS-CV-2026.pdf" download>Download CV</a>
+      </div>
+      <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+        <li><a href="#education" onclick="toggleMenu()">Education</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        <li><button class="btn btn-ghost w-full" onclick="openCVViewer();toggleMenu()">View CV</button></li>
+        <li><a class="btn btn-primary w-full" href="SAMET-KIZILTAS-CV-2026.pdf" download>Download CV</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ── Hero ───────────────────────────────────────────── -->
+  <section id="hero" class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hello, I'm</p>
+        <h1 class="hero-name">Samet Kızıltaş</h1>
+        <h2 class="hero-title">Senior Software Developer</h2>
+        <p class="hero-sub">7+ years · C# · .NET · Microservices · Clean Architecture</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" onclick="openCVViewer()">View My CV</button>
+          <a class="btn btn-outline btn-lg" href="SAMET-KIZILTAS-CV-2026.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <div class="hero-avatar">
+        <div class="avatar-ring">
+          <div class="avatar-initials">SK</div>
+        </div>
+        <div class="avatar-badge">
+          <span class="badge-dot"></span>Available for opportunities
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-hint" aria-label="Scroll down">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    </a>
+  </section>
+
+  <!-- ── About ──────────────────────────────────────────── -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Results-driven <strong>Senior Software Developer</strong> with 7+ years of hands-on experience in backend
+            development, specialising in <strong>C#, .NET, and Microservices Architecture</strong>. Proven track record
+            of delivering scalable, high-performance solutions in collaboration with cross-functional teams.
+          </p>
+          <p>
+            Committed to <strong>Clean Architecture</strong>, <strong>Domain-Driven Design</strong>, and
+            customer-centric development practices. Approaches challenges as opportunities for continuous improvement.
+          </p>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">7+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Companies</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">90%</span>
+            <span class="stat-label">Unit Test Coverage</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Degrees</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ─────────────────────────────────────────── -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">
+            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Languages &amp; Frameworks
+          </h3>
+          <div class="skill-tags">
+            <span class="tag">C#</span>
+            <span class="tag">.NET</span>
+            <span class="tag">Entity Framework</span>
+            <span class="tag">Dapper</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">React</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">
+            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            Databases
+          </h3>
+          <div class="skill-tags">
+            <span class="tag">MS-SQL</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Oracle</span>
+            <span class="tag">Redis</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">
+            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Architecture &amp; Design
+          </h3>
+          <div class="skill-tags">
+            <span class="tag">Microservices</span>
+            <span class="tag">Event-Driven</span>
+            <span class="tag">Modular Monolith</span>
+            <span class="tag">CQRS</span>
+            <span class="tag">DDD</span>
+            <span class="tag">TDD</span>
+            <span class="tag">Clean Architecture</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">
+            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            APIs &amp; Security
+          </h3>
+          <div class="skill-tags">
+            <span class="tag">RESTful API</span>
+            <span class="tag">IdentityServer</span>
+            <span class="tag">OAuth 2.0</span>
+            <span class="tag">JWT</span>
+            <span class="tag">API Gateway</span>
+            <span class="tag">Ocelot</span>
+            <span class="tag">BFF Pattern</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">
+            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Messaging &amp; Jobs
+          </h3>
+          <div class="skill-tags">
+            <span class="tag">RabbitMQ</span>
+            <span class="tag">Hangfire</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">
+            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            Testing &amp; Monitoring
+          </h3>
+          <div class="skill-tags">
+            <span class="tag">NUnit</span>
+            <span class="tag">Moq</span>
+            <span class="tag">Unit Testing</span>
+            <span class="tag">Grafana</span>
+            <span class="tag">Prometheus</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <h3 class="skill-cat-title">
+            <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            Tools &amp; Workflow
+          </h3>
+          <div class="skill-tags">
+            <span class="tag">Agile / Scrum</span>
+            <span class="tag">Jira</span>
+            <span class="tag">GitHub Copilot</span>
+            <span class="tag">AI-Assisted Dev</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Experience ─────────────────────────────────────── -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-marker current"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="job-title">Senior Backend Developer</h3>
+                <p class="job-company">Boyner A.Ş.</p>
+              </div>
+              <span class="job-period">May 2025 – Present</span>
+            </div>
+            <p class="job-desc">Contributing to enterprise-level e-commerce platform initiatives, driving data integration and digital product transformation projects.</p>
+            <ul class="job-details">
+              <li>Implemented sales data integration with the Insider platform, enabling data-driven marketing and customer engagement workflows.</li>
+              <li>Contributed to the Boyner Giftcard Redesign initiative, improving the digital gift card experience for end users.</li>
+              <li>Actively leveraged GitHub Copilot (Opus 4.5 and 4.6 models) throughout development workflows, serving primarily as a code reviewer and implementing documented flows through dedicated AI agents.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="job-title">Senior Backend Developer</h3>
+                <p class="job-company">Borda Technology</p>
+              </div>
+              <span class="job-period">Apr 2023 – May 2025</span>
+            </div>
+            <p class="job-desc">Developed a hospital asset management product utilising Clean Architecture and Microservices with event-based communication.</p>
+            <ul class="job-details">
+              <li>Achieved up to 90% unit test coverage across all microservices using NUnit and Moq.</li>
+              <li>Led the architectural refactoring of microservices into a Modular Monolith structure to improve maintainability and reduce operational complexity.</li>
+              <li>Designed and developed a workflow and actions mechanism to extend user functionality, similar to N8N, enabling no-code automation capabilities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="job-title">Senior Backend Developer</h3>
+                <p class="job-company">HangiKredi</p>
+              </div>
+              <span class="job-period">Nov 2021 – Apr 2023</span>
+            </div>
+            <p class="job-desc">Delivered key features including financial assistance and budget management modules for a credit product comparison platform.</p>
+            <ul class="job-details">
+              <li>Migrated the existing custom authentication system to IdentityServer, enhancing security and standards compliance with OAuth 2.0 and JWT.</li>
+              <li>Implemented a new API Gateway using Ocelot and introduced a Backend for Frontend (BFF) layer to orchestrate 10+ microservices efficiently.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="job-title">Backend Developer</h3>
+                <p class="job-company">Acıbadem Technology</p>
+              </div>
+              <span class="job-period">Nov 2020 – Nov 2021</span>
+            </div>
+            <p class="job-desc">Played a key role in optimising the performance of critical modules within the Material Management Team.</p>
+            <ul class="job-details">
+              <li>Mentored junior developers on .NET and Entity Framework Core best practices.</li>
+              <li>Guided team members in adopting Domain-Driven Design (DDD) and Modular Monolith architecture principles.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <h3 class="job-title">Full-Stack Developer</h3>
+                <p class="job-company">PAK Group</p>
+              </div>
+              <span class="job-period">Jul 2018 – Nov 2020</span>
+            </div>
+            <p class="job-desc">Collaborated with cross-departmental teams to digitalise business processes by developing rapid, tailor-made applications.</p>
+            <ul class="job-details">
+              <li>Designed and established a reusable architecture framework optimised for rapid application development.</li>
+              <li>Developed a Dynamic Form Builder tool with a no-code interface using React, enabling non-technical users to create custom forms.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Education ──────────────────────────────────────── -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-grid">
+
+        <div class="edu-card">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <h3 class="edu-degree">Master of Computer Engineering (Non-Thesis)</h3>
+            <p class="edu-institution">Üsküdar University</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <h3 class="edu-degree">Management Information Systems (MIS)</h3>
+            <p class="edu-institution">Anadolu University</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <div>
+            <h3 class="edu-degree">Computer Programming</h3>
+            <p class="edu-institution">Balıkesir University</p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <h3 class="edu-degree">Computer Programming</h3>
+            <p class="edu-institution">Tuzla Technical High School</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ────────────────────────────────────────── -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+      <p class="contact-intro">Feel free to reach out for collaboration, opportunities, or just a chat about technology.</p>
+      <div class="contact-cards">
+
+        <a class="contact-card" href="mailto:samet-kiziltas@outlook.com">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+          </div>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">samet-kiziltas@outlook.com</span>
+        </a>
+
+        <a class="contact-card" href="tel:+905316810706">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.06 6.06l1.27-.79a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+90 531 681 07 06</span>
+        </a>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Istanbul, Turkey</span>
+        </div>
+
+      </div>
+      <div class="cv-cta">
+        <p>Want to know more?</p>
+        <div class="cta-buttons">
+          <button class="btn btn-primary btn-lg" onclick="openCVViewer()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            View Full CV
+          </button>
+          <a class="btn btn-outline btn-lg" href="SAMET-KIZILTAS-CV-2026.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download CV (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Samet Kızıltaş. Built with ❤️ and deployed via GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <!-- ── CV Viewer Modal ────────────────────────────────── -->
+  <div class="modal-overlay" id="cvModal" onclick="handleModalClick(event)">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Samet Kızıltaş – CV</h3>
+        <div class="modal-actions">
+          <a class="btn btn-primary btn-sm" href="SAMET-KIZILTAS-CV-2026.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download
+          </a>
+          <button class="modal-close" onclick="closeCVViewer()" aria-label="Close">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <iframe id="cvFrame" src="" title="CV Preview" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

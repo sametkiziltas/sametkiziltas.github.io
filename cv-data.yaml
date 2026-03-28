@@ -1,0 +1,126 @@
+contact:
+  name: Samet Kızıltaş
+  title: Senior Software Developer
+  phone: "+90 531 681 07 06"
+  email: samet-kiziltas@outlook.com
+  location: Istanbul, Turkey
+
+profile: >
+  Results-driven Senior Software Developer with 7+ years of hands-on
+  experience in backend development, specializing in C#, .NET, and
+  Microservices Architecture. Proven track record of delivering
+  scalable, high-performance solutions in collaboration with
+  cross-functional teams. Committed to Clean Architecture, Domain-Driven
+  Design, and customer-centric development practices. Approaches
+  challenges as opportunities for continuous improvement.
+
+knowledge_base:
+  - C#, .NET, Entity Framework, Dapper
+  - RESTful API Design and Development
+  - MS-SQL, PostgreSQL, Oracle
+  - Microservices, Event-Driven Architecture
+  - Monolith, Modular Monolith, CQRS
+  - Domain-Driven Design (DDD), Test-Driven Development (TDD)
+  - NUnit, Moq, Unit Testing
+  - Clean Code, Clean Architecture
+  - RabbitMQ, Hangfire, Redis
+  - IdentityServer, OAuth 2.0, JWT Authentication
+  - API Gateway, Ocelot, BFF Pattern
+  - JavaScript, React
+  - Agile, Scrum, Jira
+  - Monitoring, Grafana, Prometheus
+  - GitHub Copilot, AI-Assisted Development
+
+experience:
+  - title: Senior Backend Developer
+    company: Boyner A.S.
+    period: May 2025 to Present
+    description: >
+      Contributing to enterprise-level e-commerce platform initiatives,
+      driving data integration and digital product transformation projects.
+    details:
+      - >
+        Implemented sales data integration with the Insider platform,
+        enabling data-driven marketing and customer engagement workflows.
+      - >
+        Contributed to the Boyner Giftcard Redesign initiative,
+        improving the digital gift card experience for end users.
+      - >
+        Actively leveraged GitHub Copilot (Opus 4.5 and 4.6 models)
+        throughout development workflows, serving primarily as a
+        code reviewer and implementing documented flows through
+        dedicated AI agents.
+
+  - title: Senior Backend Developer
+    company: Borda Technology
+    period: April 2023 to May 2025
+    description: >
+      Developed a hospital asset management product utilizing
+      Clean Architecture and Microservices with event-based communication.
+    details:
+      - >
+        Achieved up to 90% unit test coverage across all microservices
+        using NUnit and Moq.
+      - >
+        Led the architectural refactoring of microservices into a
+        Modular Monolith structure to improve maintainability and
+        reduce operational complexity.
+      - >
+        Designed and developed a workflow and actions mechanism to
+        extend user functionality, similar to N8N, enabling no-code
+        automation capabilities.
+
+  - title: Senior Backend Developer
+    company: HangiKredi
+    period: November 2021 to April 2023
+    description: >
+      Delivered key features including financial assistance and budget
+      management modules for a credit product comparison platform.
+    details:
+      - >
+        Migrated the existing custom authentication system to
+        IdentityServer, enhancing security and standards compliance
+        with OAuth 2.0 and JWT.
+      - >
+        Implemented a new API Gateway using Ocelot and introduced a
+        Backend for Frontend (BFF) layer to orchestrate 10+
+        microservices efficiently.
+
+  - title: Backend Developer
+    company: Acıbadem Technology
+    period: November 2020 to November 2021
+    description: >
+      Played a key role in optimizing the performance of critical modules,
+      including Stock Counting and Stock Transaction Management, within
+      the Material Management Team.
+    details:
+      - >
+        Mentored junior developers on .NET and Entity Framework Core
+        best practices.
+      - >
+        Guided team members in adopting Domain-Driven Design (DDD) and
+        Modular Monolith architecture principles.
+
+  - title: Full-Stack Developer
+    company: PAK Group
+    period: July 2018 to November 2020
+    description: >
+      Collaborated with cross-departmental teams to digitalize business
+      processes by developing rapid, tailor-made applications.
+    details:
+      - >
+        Designed and established a reusable architecture framework
+        optimized for rapid application development.
+      - >
+        Developed a Dynamic Form Builder tool with a no-code interface
+        using React, enabling non-technical users to create custom forms.
+
+education:
+  - institution: Uskudar University
+    degree: Master of Computer Engineering (Non-Thesis)
+  - institution: Anadolu University
+    degree: Management Information Systems (MIS)
+  - institution: Balıkesir University
+    degree: Computer Programming
+  - institution: Tuzla Technical High School
+    degree: Computer Programming
