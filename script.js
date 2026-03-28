@@ -26,36 +26,12 @@ function onScroll() {
 }
 window.addEventListener('scroll', onScroll, { passive: true });
 
-// ── CV Viewer modal ──────────────────────────────────────────────
+// ── CV Viewer – opens PDF in a new browser tab ──────────────────
 const CV_PATH = 'SAMET-KIZILTAS-CV-2026.pdf'; // update filename when CV is regenerated
 
 function openCVViewer() {
-  const modal = document.getElementById('cvModal');
-  const frame = document.getElementById('cvFrame');
-  // Load PDF only once (or on first open)
-  if (!frame.src || frame.src === window.location.href) {
-    frame.src = CV_PATH;
-  }
-  modal.classList.add('open');
-  document.body.style.overflow = 'hidden';
+  window.open(CV_PATH, '_blank');
 }
-
-function closeCVViewer() {
-  document.getElementById('cvModal').classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-function handleModalClick(event) {
-  // Close when clicking the dark backdrop (not the modal itself)
-  if (event.target === document.getElementById('cvModal')) {
-    closeCVViewer();
-  }
-}
-
-// Close on Escape key
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeCVViewer();
-});
 
 // ── Intersection Observer – fade-in on scroll ────────────────────
 const observer = new IntersectionObserver(
