@@ -27,10 +27,39 @@ function onScroll() {
 window.addEventListener('scroll', onScroll, { passive: true });
 
 // ── CV Viewer – opens PDF in a new browser tab ──────────────────
-const CV_PATH = 'SAMET-KIZILTAS-CV-2026.pdf'; // update filename when CV is regenerated
+// CV naming convention: SAMET-KIZILTAS-CV-YYYY-MM-DD.pdf
+// The latest dated file is resolved automatically via the GitHub API.
+const CV_OWNER = 'sametkiziltas';
+const CV_REPO  = 'sametkiziltas.github.io';
+const CV_REGEX = /^SAMET-KIZILTAS-CV-(\d{4}-\d{2}-\d{2})\.pdf$/;
+const CV_FALLBACK = 'SAMET-KIZILTAS-CV-2026-03-17.pdf';
 
-function openCVViewer() {
-  window.open(CV_PATH, '_blank');
+const latestCVPromise = (async () => {
+  const cached = sessionStorage.getItem('latestCV');
+  if (cached) return cached;
+  try {
+    const res = await fetch(
+      `https://api.github.com/repos/${CV_OWNER}/${CV_REPO}/contents/`,
+      { headers: { Accept: 'application/vnd.github.v3+json' } }
+    );
+    if (!res.ok) return CV_FALLBACK;
+    const files = await res.json();
+    const cvFiles = files
+      .map(f => ({ name: f.name, match: f.name.match(CV_REGEX) }))
+      .filter(f => f.match)
+      .sort((a, b) => b.match[1].localeCompare(a.match[1]));
+    const latest = cvFiles.length ? cvFiles[0].name : CV_FALLBACK;
+    sessionStorage.setItem('latestCV', latest);
+    return latest;
+  } catch (err) {
+    console.warn('Failed to fetch CV list from GitHub API:', err);
+    return CV_FALLBACK;
+  }
+})();
+
+async function openCVViewer() {
+  const path = await latestCVPromise;
+  window.open(path, '_blank');
 }
 
 // ── Intersection Observer – fade-in on scroll ────────────────────
