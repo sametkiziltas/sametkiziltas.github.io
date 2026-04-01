@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Samet Kızıltaş – Senior Software Developer</title>
-  <meta name="description" content="Personal website and CV of Samet Kızıltaş, Senior Software Developer specialising in C#, .NET and Microservices." />
+  <title data-i18n="page_title">Samet Kızıltaş – Senior Software Developer</title>
+  <meta name="description" data-i18n-attr="content" data-i18n="page_desc" content="Personal website and CV of Samet Kızıltaş, Senior Software Developer specialising in C#, .NET and Microservices." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
@@ -17,16 +17,20 @@
     <nav class="nav container">
       <a href="#hero" class="nav-logo">SK</a>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#skills" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#experience" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="#projects" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#education" data-i18n="nav_education">Education</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
       </ul>
       <div class="nav-actions">
-        <button class="btn btn-ghost" onclick="openCVViewer()">View CV</button>
-        <a class="btn btn-primary" href="SAMET-KIZILTAS-CV-2026.pdf" download>Download CV</a>
+        <button class="btn btn-ghost" onclick="openCVViewer()" data-i18n="nav_view_cv">View CV</button>
+        <a class="btn btn-primary" href="SAMET-KIZILTAS-CV-2026.pdf" download data-i18n="nav_download_cv">Download CV</a>
+        <button class="btn btn-ghost lang-toggle" onclick="toggleLanguage()" aria-label="Switch language">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span class="lang-label">TR</span>
+        </button>
       </div>
       <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -35,14 +39,20 @@
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
-        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-        <li><a href="#education" onclick="toggleMenu()">Education</a></li>
-        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        <li><button class="btn btn-ghost w-full" onclick="openCVViewer();toggleMenu()">View CV</button></li>
-        <li><a class="btn btn-primary w-full" href="SAMET-KIZILTAS-CV-2026.pdf" download>Download CV</a></li>
+        <li><a href="#about" onclick="toggleMenu()" data-i18n="nav_about">About</a></li>
+        <li><a href="#skills" onclick="toggleMenu()" data-i18n="nav_skills">Skills</a></li>
+        <li><a href="#experience" onclick="toggleMenu()" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="#projects" onclick="toggleMenu()" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#education" onclick="toggleMenu()" data-i18n="nav_education">Education</a></li>
+        <li><a href="#contact" onclick="toggleMenu()" data-i18n="nav_contact">Contact</a></li>
+        <li><button class="btn btn-ghost w-full" onclick="openCVViewer();toggleMenu()" data-i18n="nav_view_cv">View CV</button></li>
+        <li><a class="btn btn-primary w-full" href="SAMET-KIZILTAS-CV-2026.pdf" download data-i18n="nav_download_cv">Download CV</a></li>
+        <li>
+          <button class="btn btn-ghost w-full lang-toggle" onclick="toggleLanguage();toggleMenu()" aria-label="Switch language">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="lang-label">TR</span>
+          </button>
+        </li>
       </ul>
     </div>
   </header>
@@ -52,13 +62,13 @@
     <div class="hero-bg"></div>
     <div class="container hero-content">
       <div class="hero-text">
-        <p class="hero-greeting">Hello, I'm</p>
+        <p class="hero-greeting" data-i18n="hero_greeting">Hello, I'm</p>
         <h1 class="hero-name">Samet Kızıltaş</h1>
-        <h2 class="hero-title">Senior Software Developer</h2>
+        <h2 class="hero-title" data-i18n="hero_title">Senior Software Developer</h2>
         <p class="hero-sub">7+ years · C# · .NET · Microservices · Clean Architecture</p>
         <div class="hero-cta">
-          <button class="btn btn-primary btn-lg" onclick="openCVViewer()">View My CV</button>
-          <a class="btn btn-outline btn-lg" href="SAMET-KIZILTAS-CV-2026.pdf" download>Download CV</a>
+          <button class="btn btn-primary btn-lg" onclick="openCVViewer()" data-i18n="hero_view_cv">View My CV</button>
+          <a class="btn btn-outline btn-lg" href="SAMET-KIZILTAS-CV-2026.pdf" download data-i18n="hero_download_cv">Download CV</a>
         </div>
       </div>
       <div class="hero-avatar">
@@ -66,7 +76,7 @@
           <div class="avatar-initials">SK</div>
         </div>
         <div class="avatar-badge">
-          <span class="badge-dot"></span>Available for opportunities
+          <span class="badge-dot"></span><span data-i18n="hero_badge">Available for opportunities</span>
         </div>
       </div>
     </div>
@@ -78,15 +88,15 @@
   <!-- ── About ──────────────────────────────────────────── -->
   <section id="about" class="section">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
+      <h2 class="section-title" data-i18n="about_title">About Me</h2>
       <div class="about-grid">
         <div class="about-text">
-          <p>
+          <p data-i18n="about_p1">
             Results-driven <strong>Senior Software Developer</strong> with 7+ years of hands-on experience in backend
             development, specialising in <strong>C#, .NET, and Microservices Architecture</strong>. Proven track record
             of delivering scalable, high-performance solutions in collaboration with cross-functional teams.
           </p>
-          <p>
+          <p data-i18n="about_p2">
             Committed to <strong>Clean Architecture</strong>, <strong>Domain-Driven Design</strong>, and
             customer-centric development practices. Approaches challenges as opportunities for continuous improvement.
           </p>
@@ -94,19 +104,19 @@
         <div class="about-stats">
           <div class="stat-card">
             <span class="stat-number">7+</span>
-            <span class="stat-label">Years Experience</span>
+            <span class="stat-label" data-i18n="stat_years">Years Experience</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">5</span>
-            <span class="stat-label">Companies</span>
+            <span class="stat-label" data-i18n="stat_companies">Companies</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">90%</span>
-            <span class="stat-label">Unit Test Coverage</span>
+            <span class="stat-label" data-i18n="stat_test">Unit Test Coverage</span>
           </div>
           <div class="stat-card">
             <span class="stat-number">3</span>
-            <span class="stat-label">Degrees</span>
+            <span class="stat-label" data-i18n="stat_degrees">Degrees</span>
           </div>
         </div>
       </div>
@@ -116,13 +126,13 @@
   <!-- ── Skills ─────────────────────────────────────────── -->
   <section id="skills" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <h2 class="section-title" data-i18n="skills_title">Skills &amp; Technologies</h2>
       <div class="skills-grid">
 
         <div class="skill-category">
           <h3 class="skill-cat-title">
             <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            Languages &amp; Frameworks
+            <span data-i18n="skill_lang">Languages &amp; Frameworks</span>
           </h3>
           <div class="skill-tags">
             <span class="tag">C#</span>
@@ -137,7 +147,7 @@
         <div class="skill-category">
           <h3 class="skill-cat-title">
             <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
-            Databases
+            <span data-i18n="skill_db">Databases</span>
           </h3>
           <div class="skill-tags">
             <span class="tag">MS-SQL</span>
@@ -150,7 +160,7 @@
         <div class="skill-category">
           <h3 class="skill-cat-title">
             <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            Architecture &amp; Design
+            <span data-i18n="skill_arch">Architecture &amp; Design</span>
           </h3>
           <div class="skill-tags">
             <span class="tag">Microservices</span>
@@ -166,7 +176,7 @@
         <div class="skill-category">
           <h3 class="skill-cat-title">
             <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            APIs &amp; Security
+            <span data-i18n="skill_api">APIs &amp; Security</span>
           </h3>
           <div class="skill-tags">
             <span class="tag">RESTful API</span>
@@ -182,7 +192,7 @@
         <div class="skill-category">
           <h3 class="skill-cat-title">
             <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
-            Messaging &amp; Jobs
+            <span data-i18n="skill_msg">Messaging &amp; Jobs</span>
           </h3>
           <div class="skill-tags">
             <span class="tag">RabbitMQ</span>
@@ -193,7 +203,7 @@
         <div class="skill-category">
           <h3 class="skill-cat-title">
             <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            Testing &amp; Monitoring
+            <span data-i18n="skill_test">Testing &amp; Monitoring</span>
           </h3>
           <div class="skill-tags">
             <span class="tag">NUnit</span>
@@ -207,7 +217,7 @@
         <div class="skill-category">
           <h3 class="skill-cat-title">
             <svg class="skill-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
-            Tools &amp; Workflow
+            <span data-i18n="skill_tools">Tools &amp; Workflow</span>
           </h3>
           <div class="skill-tags">
             <span class="tag">Agile / Scrum</span>
@@ -224,7 +234,7 @@
   <!-- ── Experience ─────────────────────────────────────── -->
   <section id="experience" class="section">
     <div class="container">
-      <h2 class="section-title">Work Experience</h2>
+      <h2 class="section-title" data-i18n="exp_title">Work Experience</h2>
       <div class="timeline">
 
         <div class="timeline-item">
@@ -232,16 +242,16 @@
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <h3 class="job-title">Senior Backend Developer</h3>
+                <h3 class="job-title" data-i18n="exp1_title">Senior Backend Developer</h3>
                 <p class="job-company">Boyner A.Ş.</p>
               </div>
-              <span class="job-period">May 2025 – Present</span>
+              <span class="job-period" data-i18n="exp1_period">May 2025 – Present</span>
             </div>
-            <p class="job-desc">Contributing to enterprise-level e-commerce platform initiatives, driving data integration and digital product transformation projects.</p>
+            <p class="job-desc" data-i18n="exp1_desc">Contributing to enterprise-level e-commerce platform initiatives, driving data integration and digital product transformation projects.</p>
             <ul class="job-details">
-              <li>Implemented sales data integration with the Insider platform, enabling data-driven marketing and customer engagement workflows.</li>
-              <li>Contributed to the Boyner Giftcard Redesign initiative, improving the digital gift card experience for end users.</li>
-              <li>Actively leveraged GitHub Copilot (Opus 4.5 and 4.6 models) throughout development workflows, serving primarily as a code reviewer and implementing documented flows through dedicated AI agents.</li>
+              <li data-i18n="exp1_d1">Implemented sales data integration with the Insider platform, enabling data-driven marketing and customer engagement workflows.</li>
+              <li data-i18n="exp1_d2">Contributed to the Boyner Giftcard Redesign initiative, improving the digital gift card experience for end users.</li>
+              <li data-i18n="exp1_d3">Actively leveraged GitHub Copilot (Opus 4.5 and 4.6 models) throughout development workflows, serving primarily as a code reviewer and implementing documented flows through dedicated AI agents.</li>
             </ul>
           </div>
         </div>
@@ -251,16 +261,16 @@
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <h3 class="job-title">Senior Backend Developer</h3>
+                <h3 class="job-title" data-i18n="exp2_title">Senior Backend Developer</h3>
                 <p class="job-company">Borda Technology</p>
               </div>
-              <span class="job-period">Apr 2023 – May 2025</span>
+              <span class="job-period" data-i18n="exp2_period">Apr 2023 – May 2025</span>
             </div>
-            <p class="job-desc">Developed a hospital asset management product utilising Clean Architecture and Microservices with event-based communication.</p>
+            <p class="job-desc" data-i18n="exp2_desc">Developed a hospital asset management product utilising Clean Architecture and Microservices with event-based communication.</p>
             <ul class="job-details">
-              <li>Achieved up to 90% unit test coverage across all microservices using NUnit and Moq.</li>
-              <li>Led the architectural refactoring of microservices into a Modular Monolith structure to improve maintainability and reduce operational complexity.</li>
-              <li>Designed and developed a workflow and actions mechanism to extend user functionality, similar to N8N, enabling no-code automation capabilities.</li>
+              <li data-i18n="exp2_d1">Achieved up to 90% unit test coverage across all microservices using NUnit and Moq.</li>
+              <li data-i18n="exp2_d2">Led the architectural refactoring of microservices into a Modular Monolith structure to improve maintainability and reduce operational complexity.</li>
+              <li data-i18n="exp2_d3">Designed and developed a workflow and actions mechanism to extend user functionality, similar to N8N, enabling no-code automation capabilities.</li>
             </ul>
           </div>
         </div>
@@ -270,15 +280,15 @@
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <h3 class="job-title">Senior Backend Developer</h3>
+                <h3 class="job-title" data-i18n="exp3_title">Senior Backend Developer</h3>
                 <p class="job-company">HangiKredi</p>
               </div>
-              <span class="job-period">Nov 2021 – Apr 2023</span>
+              <span class="job-period" data-i18n="exp3_period">Nov 2021 – Apr 2023</span>
             </div>
-            <p class="job-desc">Delivered key features including financial assistance and budget management modules for a credit product comparison platform.</p>
+            <p class="job-desc" data-i18n="exp3_desc">Delivered key features including financial assistance and budget management modules for a credit product comparison platform.</p>
             <ul class="job-details">
-              <li>Migrated the existing custom authentication system to IdentityServer, enhancing security and standards compliance with OAuth 2.0 and JWT.</li>
-              <li>Implemented a new API Gateway using Ocelot and introduced a Backend for Frontend (BFF) layer to orchestrate 10+ microservices efficiently.</li>
+              <li data-i18n="exp3_d1">Migrated the existing custom authentication system to IdentityServer, enhancing security and standards compliance with OAuth 2.0 and JWT.</li>
+              <li data-i18n="exp3_d2">Implemented a new API Gateway using Ocelot and introduced a Backend for Frontend (BFF) layer to orchestrate 10+ microservices efficiently.</li>
             </ul>
           </div>
         </div>
@@ -288,15 +298,15 @@
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <h3 class="job-title">Backend Developer</h3>
+                <h3 class="job-title" data-i18n="exp4_title">Backend Developer</h3>
                 <p class="job-company">Acıbadem Technology</p>
               </div>
-              <span class="job-period">Nov 2020 – Nov 2021</span>
+              <span class="job-period" data-i18n="exp4_period">Nov 2020 – Nov 2021</span>
             </div>
-            <p class="job-desc">Played a key role in optimising the performance of critical modules within the Material Management Team.</p>
+            <p class="job-desc" data-i18n="exp4_desc">Played a key role in optimising the performance of critical modules within the Material Management Team.</p>
             <ul class="job-details">
-              <li>Mentored junior developers on .NET and Entity Framework Core best practices.</li>
-              <li>Guided team members in adopting Domain-Driven Design (DDD) and Modular Monolith architecture principles.</li>
+              <li data-i18n="exp4_d1">Mentored junior developers on .NET and Entity Framework Core best practices.</li>
+              <li data-i18n="exp4_d2">Guided team members in adopting Domain-Driven Design (DDD) and Modular Monolith architecture principles.</li>
             </ul>
           </div>
         </div>
@@ -306,15 +316,15 @@
           <div class="timeline-card">
             <div class="timeline-header">
               <div>
-                <h3 class="job-title">Full-Stack Developer</h3>
+                <h3 class="job-title" data-i18n="exp5_title">Full-Stack Developer</h3>
                 <p class="job-company">PAK Group</p>
               </div>
-              <span class="job-period">Jul 2018 – Nov 2020</span>
+              <span class="job-period" data-i18n="exp5_period">Jul 2018 – Nov 2020</span>
             </div>
-            <p class="job-desc">Collaborated with cross-departmental teams to digitalise business processes by developing rapid, tailor-made applications.</p>
+            <p class="job-desc" data-i18n="exp5_desc">Collaborated with cross-departmental teams to digitalise business processes by developing rapid, tailor-made applications.</p>
             <ul class="job-details">
-              <li>Designed and established a reusable architecture framework optimised for rapid application development.</li>
-              <li>Developed a Dynamic Form Builder tool with a no-code interface using React, enabling non-technical users to create custom forms.</li>
+              <li data-i18n="exp5_d1">Designed and established a reusable architecture framework optimised for rapid application development.</li>
+              <li data-i18n="exp5_d2">Developed a Dynamic Form Builder tool with a no-code interface using React, enabling non-technical users to create custom forms.</li>
             </ul>
           </div>
         </div>
@@ -326,7 +336,7 @@
   <!-- ── Projects ──────────────────────────────────────── -->
   <section id="projects" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Projects</h2>
+      <h2 class="section-title" data-i18n="projects_title">Projects</h2>
       <div class="projects-grid">
 
         <div class="project-card">
@@ -337,16 +347,16 @@
             <div>
               <h3 class="project-name">pupl.net</h3>
               <span class="project-status project-status--live">
-                <span class="status-dot status-dot--live"></span>Live
+                <span class="status-dot status-dot--live"></span><span data-i18n="status_live">Live</span>
               </span>
             </div>
           </div>
-          <p class="project-summary">A scheduling and sharing platform for streamers and content creators.</p>
-          <p class="project-detail">Bireysellerin ya da yayıncıların yayın akışlarını, etkinliklerini planladığı, bu planları takipçileri ile paylaştığı ve takipçilerin bu planları takvimlerine import edebildiği bir platform.</p>
+          <p class="project-summary" data-i18n="proj1_summary">A scheduling and sharing platform for streamers and content creators.</p>
+          <p class="project-detail" data-i18n="proj1_detail">Bireysellerin ya da yayıncıların yayın akışlarını, etkinliklerini planladığı, bu planları takipçileri ile paylaştığı ve takipçilerin bu planları takvimlerine import edebildiği bir platform.</p>
           <div class="project-footer">
             <a class="btn btn-sm btn-outline" href="https://pupl.net" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Visit
+              <span data-i18n="btn_visit">Visit</span>
             </a>
           </div>
         </div>
@@ -359,12 +369,12 @@
             <div>
               <h3 class="project-name">oto-track</h3>
               <span class="project-status project-status--soon">
-                <span class="status-dot status-dot--soon"></span>Coming Soon
+                <span class="status-dot status-dot--soon"></span><span data-i18n="status_soon">Coming Soon</span>
               </span>
             </div>
           </div>
-          <p class="project-summary">A vehicle service management and tracking platform for auto repair shops.</p>
-          <p class="project-detail">Araba servislerinin ya da bireysel tamircilerin kendi yaptığı, üzerinde çalıştığı arabalar ile ilgili bilgileri, servis zamanlarını, bakımlarını yönetebildiği, kullanıcılara servisteki arabalar ile ilgili bilgileri notification olarak atabilen, randevu oluşturulabilen bir platform. İleri fazda plaka ile araç servis ve bakım geçmişi sorgulanabilecek.</p>
+          <p class="project-summary" data-i18n="proj2_summary">A vehicle service management and tracking platform for auto repair shops.</p>
+          <p class="project-detail" data-i18n="proj2_detail">Araba servislerinin ya da bireysel tamircilerin kendi yaptığı, üzerinde çalıştığı arabalar ile ilgili bilgileri, servis zamanlarını, bakımlarını yönetebildiği, kullanıcılara servisteki arabalar ile ilgili bilgileri notification olarak atabilen, randevu oluşturulabilen bir platform. İleri fazda plaka ile araç servis ve bakım geçmişi sorgulanabilecek.</p>
         </div>
 
         <div class="project-card">
@@ -375,12 +385,12 @@
             <div>
               <h3 class="project-name">loyalty-for-everyone</h3>
               <span class="project-status project-status--soon">
-                <span class="status-dot status-dot--soon"></span>Coming Soon
+                <span class="status-dot status-dot--soon"></span><span data-i18n="status_soon">Coming Soon</span>
               </span>
             </div>
           </div>
-          <p class="project-summary">A digital loyalty program platform designed for small and medium businesses.</p>
-          <p class="project-detail">KOBİ'lerin sattığı ürünler üzerinden loyalty akışları tanımlayabildiği, kullanıcılarına belirli bir hedefe ulaşması için akışlar oluşturabildiği bir platform. Özellikle birden çok kahve zinciri markasının tercih edebileceği, loyalty card ile verilen fiziksel akışların dijitale aktarılmasını sağlayan proje.</p>
+          <p class="project-summary" data-i18n="proj3_summary">A digital loyalty program platform designed for small and medium businesses.</p>
+          <p class="project-detail" data-i18n="proj3_detail">KOBİ'lerin sattığı ürünler üzerinden loyalty akışları tanımlayabildiği, kullanıcılarına belirli bir hedefe ulaşması için akışlar oluşturabildiği bir platform. Özellikle birden çok kahve zinciri markasının tercih edebileceği, loyalty card ile verilen fiziksel akışların dijitale aktarılmasını sağlayan proje.</p>
         </div>
 
       </div>
@@ -390,7 +400,7 @@
   <!-- ── Education ──────────────────────────────────────── -->
   <section id="education" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Education</h2>
+      <h2 class="section-title" data-i18n="edu_title">Education</h2>
       <div class="edu-grid">
 
         <div class="edu-card">
@@ -398,8 +408,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
           <div>
-            <h3 class="edu-degree">Master of Computer Engineering (Non-Thesis)</h3>
-            <p class="edu-institution">Üsküdar University</p>
+            <h3 class="edu-degree" data-i18n="edu1_degree">Master of Computer Engineering (Non-Thesis)</h3>
+            <p class="edu-institution" data-i18n="edu1_inst">Üsküdar University</p>
           </div>
         </div>
 
@@ -408,8 +418,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
           <div>
-            <h3 class="edu-degree">Management Information Systems (MIS)</h3>
-            <p class="edu-institution">Anadolu University</p>
+            <h3 class="edu-degree" data-i18n="edu2_degree">Management Information Systems (MIS)</h3>
+            <p class="edu-institution" data-i18n="edu2_inst">Anadolu University</p>
           </div>
         </div>
 
@@ -418,8 +428,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </div>
           <div>
-            <h3 class="edu-degree">Computer Programming</h3>
-            <p class="edu-institution">Balıkesir University</p>
+            <h3 class="edu-degree" data-i18n="edu3_degree">Computer Programming</h3>
+            <p class="edu-institution" data-i18n="edu3_inst">Balıkesir University</p>
           </div>
         </div>
 
@@ -428,8 +438,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           </div>
           <div>
-            <h3 class="edu-degree">Computer Programming</h3>
-            <p class="edu-institution">Tuzla Technical High School</p>
+            <h3 class="edu-degree" data-i18n="edu4_degree">Computer Programming</h3>
+            <p class="edu-institution" data-i18n="edu4_inst">Tuzla Technical High School</p>
           </div>
         </div>
 
@@ -440,15 +450,15 @@
   <!-- ── Contact ────────────────────────────────────────── -->
   <section id="contact" class="section">
     <div class="container">
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="contact-intro">Feel free to reach out for collaboration, opportunities, or just a chat about technology.</p>
+      <h2 class="section-title" data-i18n="contact_title">Get In Touch</h2>
+      <p class="contact-intro" data-i18n="contact_intro">Feel free to reach out for collaboration, opportunities, or just a chat about technology.</p>
       <div class="contact-cards">
 
         <a class="contact-card" href="mailto:samet-kiziltas@outlook.com">
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
           </div>
-          <span class="contact-label">Email</span>
+          <span class="contact-label" data-i18n="contact_email_label">Email</span>
           <span class="contact-value">samet-kiziltas@outlook.com</span>
         </a>
 
@@ -456,7 +466,7 @@
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.17h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.9a16 16 0 0 0 6.06 6.06l1.27-.79a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <span class="contact-label">Phone</span>
+          <span class="contact-label" data-i18n="contact_phone_label">Phone</span>
           <span class="contact-value">+90 531 681 07 06</span>
         </a>
 
@@ -464,21 +474,21 @@
           <div class="contact-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <span class="contact-label">Location</span>
-          <span class="contact-value">Istanbul, Turkey</span>
+          <span class="contact-label" data-i18n="contact_location_label">Location</span>
+          <span class="contact-value" data-i18n="contact_location">Istanbul, Turkey</span>
         </div>
 
       </div>
       <div class="cv-cta">
-        <p>Want to know more?</p>
+        <p data-i18n="cta_more">Want to know more?</p>
         <div class="cta-buttons">
           <button class="btn btn-primary btn-lg" onclick="openCVViewer()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-            View Full CV
+            <span data-i18n="cta_view_cv">View Full CV</span>
           </button>
           <a class="btn btn-outline btn-lg" href="SAMET-KIZILTAS-CV-2026.pdf" download>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download CV (PDF)
+            <span data-i18n="cta_download_cv">Download CV (PDF)</span>
           </a>
         </div>
       </div>
@@ -488,7 +498,7 @@
   <!-- ── Footer ─────────────────────────────────────────── -->
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© 2026 Samet Kızıltaş. Built with ❤️ and deployed via GitHub Pages.</p>
+      <p data-i18n="footer">© 2026 Samet Kızıltaş. Built with ❤️ and deployed via GitHub Pages.</p>
     </div>
   </footer>
 

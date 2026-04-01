@@ -146,7 +146,15 @@ ul { list-style: none; }
 }
 .nav-links a:hover { color: var(--text); }
 
-.nav-actions { display: flex; gap: .75rem; margin-left: auto; }
+.nav-actions { display: flex; gap: .75rem; margin-left: auto; align-items: center; }
+
+.lang-toggle {
+  padding: .4rem .75rem;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.lang-toggle svg { display: inline-block; flex-shrink: 0; }
 
 .hamburger {
   display: none;
