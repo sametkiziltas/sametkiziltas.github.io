@@ -74,7 +74,7 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(
-  '.stat-card, .skill-category, .timeline-card, .edu-card, .contact-card'
+  '.stat-card, .skill-category, .timeline-card, .project-card, .edu-card, .contact-card'
 ).forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(20px)';
